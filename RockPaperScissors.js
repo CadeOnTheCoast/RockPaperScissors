@@ -1,5 +1,4 @@
-<script>
-    function computerPlay() {
+function computerPlay() {
     pick = ["rock", "paper", "scissors"];
     return pick[Math.floor(Math.random() * pick.length)];
   }
@@ -32,4 +31,3 @@ function game(){
     }
 }
   console.log(game())
-</script>
