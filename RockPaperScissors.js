@@ -1,5 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection;
+let computerSelection;
 function computerPlay() {
     pick = ["rock", "paper", "scissors"];
     return pick[Math.floor(Math.random() * pick.length)];
@@ -34,11 +36,13 @@ function playRound(playerSelection, computerSelection) {
 
 function game(){
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Please choose, paper, rick pr experience!)");
-        let computerSelection = computerPlay();
+        playerSelection = prompt("Please choose paper, rock, or scissors!)");
+        computerSelection = computerPlay();
+        if (playerSelection == computerSelection){
+            i --;
+            alert("Tie, play again.");}
         playRound(playerSelection, computerSelection); 
     }
-    console.log("The final score was, You: " + Math.abs(playerScore) + " Computer: " + Math.abs(computerScore));
+    alert ("The final score was, You: " + Math.abs(playerScore) + " Computer: " + Math.abs(computerScore));
 }
-console.log(computerSelection + " " + playerSelection)
 game();
