@@ -42,12 +42,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(){
-    while (totalScore <= 5) {
+    while (totalScore <= 4) {
         playerSelection = prompt("Please choose paper, rock, or scissors!)");
         computerSelection = computerPlay();
         playRound(playerSelection, computerSelection); 
-        alert("The score is" + playerScore + "computer" + computerScore+ "total" + totalScore);
+        alert("The current score is, You: " + playerScore + "; Computer: " + computerScore);
     }
-    alert ("The final score was, You: " + playerScore + " Computer: " + computerScore);
+    if (playerScore > computerScore){
+        alert ("You Win! The final score was, You: " + playerScore + "; Computer: " + computerScore);
+    }else{
+        alert ("You Lose! The final score was, You: " + playerScore + "; Computer: " + computerScore);
+    }
+
 }
 game();
