@@ -1,33 +1,44 @@
+let playerScore = 0;
+let computerScore = 0;
 function computerPlay() {
     pick = ["rock", "paper", "scissors"];
     return pick[Math.floor(Math.random() * pick.length)];
   }
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
-        return "Tie!";
-    } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
-        return "You Lose!"
-    } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
-        return "You Win!"
-    } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
-        return "You Lose!"
-    } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
-        return "You Win!"
-    } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
-        return "You Win!"
-    } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
-        return "You Lose!"
-    } else {
-        return "??";
-    }
+    
+        if (playerSelection == computerSelection) {
+            "Tie!";
+            alert("Tie, play again.");
+        } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
+            alert("Paper covers rock, you lose.");
+            computerScore ++;
+        } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+            alert("Rock destroys scissors, you win!");
+            playerScore ++;
+        } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
+            alert("Scissors cut paper, you lose.");
+            computerScore ++;
+        } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
+            alert("Paper covers rock, you win!");
+            playerScore ++;
+        } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
+            alert("Scissors cut paper you win!");
+            playerScore ++;
+        } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
+            alert("Rock smashes scissors, you lose.");
+            computerScore ++;
+        } else {
+            return "??";
+        }
 }
 
 function game(){
-    for (let index = 0; index < 6; index++) {
-        const playerSelection = "rock"
-        const computerSelection = computerPlay()
-        return playRound(playerSelection, computerSelection)
-        
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Please choose, paper, rick pr experience!)");
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection); 
     }
+    console.log("The final score was, You: " + Math.abs(playerScore) + " Computer: " + Math.abs(computerScore));
 }
-  console.log(game())
+console.log(computerSelection + " " + playerSelection)
+game();
